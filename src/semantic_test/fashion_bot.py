@@ -2,12 +2,13 @@ import openai
 import pinecone
 import streamlit as st
 from pinecone import Pinecone
+import os
 
 
 def initialize_services():
     """Initialize OpenAI and Pinecone services."""
-    openai.api_key = ""
-    pc = Pinecone(api_key="",
+    openai.api_key = os.getenv("OPENAI_API_KEY")
+    pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"),
                   environment="us-east-1-aws")
     index_name = "fashionproducts"
     index = pc.Index(index_name, "https://fashionproducts-zn0fky7.svc.aped-4627-b74a.pinecone.io")
