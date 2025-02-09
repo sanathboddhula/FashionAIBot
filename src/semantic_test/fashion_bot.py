@@ -9,8 +9,8 @@ from pinecone import Pinecone
 load_dotenv()
 
 # Retrieve API keys from environment variables
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+PINECONE_API_KEY = st.secrets["PINECONE_API_KEY"]
 
 # Hardcoded Pinecone configurations
 PINECONE_ENV = "us-east-1-aws"
